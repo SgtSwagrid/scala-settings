@@ -1,4 +1,4 @@
-name: Sync Settings to Target Repos
+name: Sync Settings
 
 on:
   push:
@@ -14,7 +14,7 @@ jobs:
 
   # Build the list of target repos from the config file so the matrix job can use it.
   prepare:
-    name: Prepare target list
+    name: Prepare targets
     runs-on: ubuntu-latest
     outputs:
       repos: ${{ steps.list.outputs.repos }}
@@ -26,7 +26,7 @@ jobs:
       - name: Build repo matrix
         id: list
         run: |
-          # Read .github/sync-repos.txt, strip comments and blank lines,
+          # Read .github/sync-targets.txt, strip comments and blank lines,
           # and emit a compact JSON array, e.g. ["myorg/repo-a","myorg/repo-b"]
           json=$(grep -v '^\s*#' .github/sync-targets.txt \
             | grep -v '^\s*$' \
@@ -46,19 +46,19 @@ jobs:
         repo: ${{ fromJson(needs.prepare.outputs.repos) }}
 
     steps:
-      - name: Checkout source repo
+      - name: Checkout source
         uses: actions/checkout@v4
         with:
           path: source
 
-      - name: Checkout target repo
+      - name: Checkout target
         uses: actions/checkout@v4
         with:
           repository: ${{ matrix.repo }}
           token: ${{ secrets.GH_TOKEN }}
           path: target
 
-      - name: Sync files (respecting exceptions)
+      - name: Sync files
         run: |
           set -euo pipefail
 
@@ -108,7 +108,7 @@ jobs:
             fi
           done
 
-      - name: Commit and open PR
+      - name: Commit
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         run: |
