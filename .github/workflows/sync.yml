@@ -118,6 +118,9 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+          # Ensure pushes use the token explicitly.
+          git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${{ matrix.repo }}.git"
+
           # Detect the default branch of the target repo.
           DEFAULT_BRANCH=$(gh repo view "${{ matrix.repo }}" --json defaultBranchRef --jq '.defaultBranchRef.name')
 
