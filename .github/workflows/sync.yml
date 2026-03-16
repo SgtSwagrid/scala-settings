@@ -119,7 +119,7 @@ jobs:
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
           # Detect the default branch of the target repo.
-          DEFAULT_BRANCH=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's|refs/remotes/origin/||')
+          DEFAULT_BRANCH=$(gh repo view "${{ matrix.repo }}" --json defaultBranchRef --jq '.defaultBranchRef.name')
 
           # Always base the sync branch on the latest default branch so the PR
           # is never out of date, even if main moved forward since checkout.
