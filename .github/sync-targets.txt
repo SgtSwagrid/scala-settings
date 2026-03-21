@@ -1,8 +1,0 @@
-# List of repositories to sync settings into.
-# One "owner/repo" entry per line. Blank lines and comments are ignored.
-
-SgtSwagrid/scala-website-template
-SgtSwagrid/scala-library-template
-SgtSwagrid/scala-colours
-SgtSwagrid/Basis
-SgtSwagrid/fairmap
