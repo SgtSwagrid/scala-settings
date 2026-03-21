@@ -1,0 +1,36 @@
+{
+  "ignore": [
+    "README.md",
+    ".github/graph.json",
+    ".github/workflows/sync.yml"
+  ],
+  "children": [
+    {
+      "target": {
+        "owner": "SgtSwagrid",
+        "name": "scala-website-template"
+      }
+
+    }, {
+      "target": {
+        "owner": "SgtSwagrid",
+        "name": "scala-library-template"
+      }
+    }, {
+      "target": {
+        "owner": "SgtSwagrid",
+        "name": "scala-colours"
+      }
+    }, {
+      "target": {
+        "owner": "SgtSwagrid",
+        "name": "Basis"
+      }
+    }, {
+      "target": {
+        "owner": "SgtSwagrid",
+        "name": "fairmap"
+      }
+    }
+  ]
+}
