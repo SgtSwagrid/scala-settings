@@ -23,6 +23,11 @@ Updates to these files should be made _here_, not in any of the downstream repos
 - [Claude Code](https://claude.com/product/claude-code) integration with IntelliJ.
 - An environment definition for GitHub [Codespaces](https://github.com/features/codespaces).
 
+### Licensing
+
+- The [MIT](https://tlo.mit.edu/understand-ip/exploring-mit-open-source-license-comprehensive-guide) license,
+  which I tend to use by default as it is fairly permissive.
+
 ## 🏗️ Where is this used?
 
 The full list of projects that rely on this configuration is defined in [graph.json](.github/graph.json).
