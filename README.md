@@ -2,12 +2,12 @@
 
 <p align="center">The single source of truth for basic configuration across all of my <a href="https://www.scala-lang.org/">Scala</a> projects.</p>
 
-## What's the workflow?
+## 👷 What's the workflow?
 
 Changes made to the configuration files contained herein are automatically copied into each dependent project using [github-graph](https://github.com/SgtSwagrid/github-graph).
 Updates to these files should be made _here_, not in any of the downstream repositories, lest they be overwritten later.
 
-## What's included?
+## 📋 What's included?
 
 ### Continuous integration
 
@@ -28,10 +28,10 @@ Updates to these files should be made _here_, not in any of the downstream repos
 - The [MIT](https://tlo.mit.edu/understand-ip/exploring-mit-open-source-license-comprehensive-guide) license,
   which I tend to use by default as it is fairly permissive.
 
-## Where is this used?
+## 🏗️ Where is this used?
 
 The full list of projects that rely on this configuration is defined in [graph.json](.github/graph.json).
 
-## Should I use this too?
+## 🤔 Should I use this too?
 
-Only if you want to, but it's primarily for my own convenience.
+Only if you want to, but know that this is primarily for my own convenience.
